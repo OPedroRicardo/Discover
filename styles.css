@@ -21,6 +21,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+main{
+    padding-top: 2.5rem
+}
+
 .sr-only{
     position: absolute;
     width: 1px;
@@ -101,6 +105,7 @@ header{
 #logo{
     color: #fff;
     font-weight: 100;
+
 }
 
 /*=========Balance========= */
@@ -223,9 +228,14 @@ td.expense{
     z-index: 1;
 }
 
+.form .h2{
+    margin-top: 0;
+}
+
 /*=========Form========= */
 form{
     max-width: 500px;
+    padding: 0;
 }
 
 form h2{
