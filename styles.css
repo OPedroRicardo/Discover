@@ -206,6 +206,7 @@ td.expense{
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    z-index: 999;
 }
 
 .modal-overlay.active{
@@ -217,7 +218,9 @@ td.expense{
     background-color: #F0F2F5;
     padding: 2.4rem;
     max-width: 500px;
-    width: 90%
+    width: 90%;
+    position: relative;
+    z-index: 1;
 }
 
 /*=========Form========= */
@@ -232,7 +235,7 @@ form h2{
 input{
     width: 100%;
     border: none;
-    border-radius: 0.2;
+    border-radius: .25rem;
     padding: 0.8rem;
 }
 
