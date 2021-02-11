@@ -228,17 +228,13 @@ td.expense{
     z-index: 1;
 }
 
-.form .h2{
-    margin-top: 0;
-}
-
 /*=========Form========= */
 form{
     max-width: 500px;
     padding: 0;
 }
 
-form h2{
+.form h2{
     margin-top: 0;
 }
 
