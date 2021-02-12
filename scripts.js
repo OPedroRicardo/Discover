@@ -177,4 +177,14 @@ const App = {
     },
 }
 
+const Search = {
+    search: document.querySelector('input#search'),
+    verify(){Transaction.all.forEach((description) => {
+        
+    })},
+    //Pegar o array
+    //Verificar as 'descriptions' para ver se contém as letras do input
+    //Esconder as que não tem
+}
+
 App.init()

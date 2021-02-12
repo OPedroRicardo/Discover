@@ -108,6 +108,19 @@ header{
 
 }
 
+/*=========Main's Input========= */
+main label{
+    padding-left: 2.5rem;
+    color: var(--dark-blue);
+}
+
+main input{
+    color: white;
+    border-radius: .25rem;
+    border: none;
+    background: var(--dark-blue);
+}
+
 /*=========Balance========= */
 #balance{
     margin-top: -8rem;
@@ -146,9 +159,9 @@ header{
 
 /*=========Table========= */
 #transaction{
-display: block;
-width: 100%;
-overflow-x: auto;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
 }
 
 #data-table{
@@ -229,17 +242,21 @@ td.expense{
     z-index: 1;
 }
 
+.modal label{
+    color: var(--dark-blue);
+}
+
 /*=========Form========= */
 form{
     max-width: 500px;
     padding: 0;
 }
 
-.form h2{
+#form h2{
     margin-top: 0;
 }
 
-input{
+#form input{
     width: 100%;
     border: none;
     border-radius: .25rem;
