@@ -157,6 +157,11 @@ main input{
     color: #fff;
 }
 
+.card.total-negative{
+    background: var(--negative);
+    color:#fff;
+}
+
 /*=========Table========= */
 #transaction{
     display: block;
@@ -211,6 +216,19 @@ td.income{
 
 td.expense{
     color: var(--negative)
+}
+
+.remove:hover{
+    cursor: pointer;
+}
+
+.edit{
+    width: 30px;
+    margin-left: 50px;
+}
+
+.edit:hover{
+    cursor: pointer;
 }
 
 /*=========Modal========= */

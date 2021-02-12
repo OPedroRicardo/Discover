@@ -20,6 +20,14 @@ const Storage = {
 
 const Transaction = {
     all: Storage.get(),
+    // openEdit(){
+    //     Modal.open()
+    //     document.querySelector('input-group button').onclick("Transaction.edit()${index}")
+    // },
+    // edit(index){
+    //     Transaction.remove(index)
+    //     Transaction.add(transaction)
+    // },
     add(transaction){
         Transaction.all.push(transaction)
         App.reload()
@@ -49,6 +57,13 @@ const Transaction = {
         return expense
     },
     total(){
+        if(Transaction.incomes() + Transaction.expenses() < 0){
+            document.querySelector('#total-card').classList.add('total-negative');
+            document.querySelector('#total-card').classList.remove('total');
+        } else{
+            document.querySelector('#total-card').classList.remove('total-negative');
+            document.querySelector('#total-card').classList.add('total');
+        }
         return Transaction.incomes() + Transaction.expenses();
     }
 }
@@ -72,10 +87,11 @@ const DOM = {
                 <td class="description">${transaction.description}</td>
                 <td class="${CSSclass}">${amount}</td>
                 <td class="date">${transaction.date}</td>
-                <td><img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação"></td>
+                <td><img onclick="Transaction.remove(${index})" class="remove" src="./assets/minus.svg" alt="Remover transação"></td>
             </tr>
             `
             return html
+            //<img onclick="Transaction.edit()" class="edit" src="./assets/pencil.svg" alt="Editar transação">
     },
     updateBalance(){
         document.getElementById('incomeDisplay').innerHTML = Utils.formatCurrency(Transaction.incomes())
@@ -175,16 +191,6 @@ const App = {
         DOM.clearTransactions()
         App.init()
     },
-}
-
-const Search = {
-    search: document.querySelector('input#search'),
-    verify(){Transaction.all.forEach((description) => {
-        
-    })},
-    //Pegar o array
-    //Verificar as 'descriptions' para ver se contém as letras do input
-    //Esconder as que não tem
 }
 
 App.init()
