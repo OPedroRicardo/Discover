@@ -222,6 +222,18 @@ td.expense{
     cursor: pointer;
 }
 
+.hide-remove{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .edit{
     width: 30px;
     margin-left: 50px;
@@ -258,6 +270,7 @@ td.expense{
     width: 90%;
     position: relative;
     z-index: 1;
+    border-radius: .25rem;
 }
 
 .modal label{

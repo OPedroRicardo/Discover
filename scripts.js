@@ -1,10 +1,13 @@
-//Fazer toggle
+
 const Modal = {
-    open(){
-    document.querySelector('.modal-overlay').classList.add('active')
+    toggleModal(){
+        document.querySelector('.modal-overlay').classList.toggle('active')
     },
-    close(){
-        document.querySelector('.modal-overlay').classList.remove('active')
+    showRemove(){
+        document.querySelector('#remove').classList.remove('hide-remove')
+    },
+    hideRemove(){
+        document.querySelector('#remove').classList.add('hide-remove')
     }
 }
 
@@ -20,14 +23,6 @@ const Storage = {
 
 const Transaction = {
     all: Storage.get(),
-    // openEdit(){
-    //     Modal.open()
-    //     document.querySelector('input-group button').onclick("Transaction.edit()${index}")
-    // },
-    // edit(index){
-    //     Transaction.remove(index)
-    //     Transaction.add(transaction)
-    // },
     add(transaction){
         Transaction.all.push(transaction)
         App.reload()
@@ -83,15 +78,14 @@ const DOM = {
         const amount = Utils.formatCurrency(transaction.amount)
 
         const html = `
-            <tr>
+            <tr mouseover="Modal.showRemove" mouseout="Modal.hideRemove">
                 <td class="description">${transaction.description}</td>
                 <td class="${CSSclass}">${amount}</td>
                 <td class="date">${transaction.date}</td>
-                <td><img onclick="Transaction.remove(${index})" class="remove" src="./assets/minus.svg" alt="Remover transação"></td>
+                <td><img onclick="Transaction.remove(${index})" class="remove" id="remove" src="./assets/minus.svg" alt="Remover transação"></td>
             </tr>
             `
             return html
-            //<img onclick="Transaction.edit()" class="edit" src="./assets/pencil.svg" alt="Editar transação">
     },
     updateBalance(){
         document.getElementById('incomeDisplay').innerHTML = Utils.formatCurrency(Transaction.incomes())
@@ -171,7 +165,7 @@ const Form = {
             const transaction = Form.formatValues()
             Transaction.add(transaction)
             Form.clearFields()
-            Modal.close()
+            Modal.toggleModal()
         } catch(error){
             alert(error.message)
         }
