@@ -194,6 +194,8 @@ table tr{
 
 table tr:hover{
     opacity: 1;
+    font-size: 1.25rem;
+    transition: .2s;
 }
 
 table thead tr th:first-child, 
@@ -220,18 +222,6 @@ td.expense{
 
 .remove:hover{
     cursor: pointer;
-}
-
-.hide-remove{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 .edit{
