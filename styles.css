@@ -194,7 +194,6 @@ table tr{
 
 table tr:hover{
     opacity: 1;
-    font-size: 1.25rem;
     transition: .2s;
 }
 
